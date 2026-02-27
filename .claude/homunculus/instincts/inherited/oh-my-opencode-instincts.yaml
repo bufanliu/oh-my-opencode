@@ -1,0 +1,815 @@
+# Instincts generated from https://github.com/bufanliu/oh-my-opencode
+# Generated: 2026-02-27T06:40:09.427Z
+# Version: 2.0
+
+---
+id: oh-my-opencode-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 69 chars
+- Based on 200 commits
+
+---
+id: oh-my-opencode-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: oh-my-opencode-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: oh-my-opencode-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: oh-my-opencode-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: agents, cli, config, features, hooks
+
+---
+id: oh-my-opencode-test-colocate
+trigger: "when writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Colocate
+
+## Action
+
+Place test file next to the source file (e.g., Button.test.tsx next to Button.tsx)
+
+## Evidence
+
+- Colocated test pattern detected
+- Tests live alongside source files
+
+---
+id: oh-my-opencode-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Framework
+
+## Action
+
+Use jest as the test framework
+
+## Evidence
+
+- Test framework detected: jest
+- File pattern: *.test.ts
+
+---
+id: oh-my-opencode-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: oh-my-opencode-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: no
+
+---
+id: oh-my-opencode-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: migrations/*, **/schema.*
+
+---
+id: oh-my-opencode-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: src/tools/hashline-edit/*, src/hooks/ralph-loop/*, src/shared/*
+
+---
+id: oh-my-opencode-workflow-fix-with-test-pattern
+trigger: "when doing fix with test pattern"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Fix With Test Pattern
+
+## Action
+
+Follow the fix-with-test-pattern workflow:
+1. Identify the bug in implementation
+2. Modify the main source file
+3. Update or add tests to verify the fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: src/**/*.ts, src/**/*.test.ts
+
+---
+id: oh-my-opencode-workflow-cla-signature-workflow
+trigger: "when doing cla signature workflow"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Cla Signature Workflow
+
+## Action
+
+Follow the cla-signature-workflow workflow:
+1. Contributor signs CLA
+2. Update signatures/cla.json with contributor info
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: signatures/cla.json
+
+---
+id: oh-my-opencode-workflow-ci-workflow-fixes
+trigger: "when doing ci workflow fixes"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Ci Workflow Fixes
+
+## Action
+
+Follow the ci-workflow-fixes workflow:
+1. Identify CI issue
+2. Modify GitHub workflow YAML files
+3. Test and verify fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: .github/workflows/*.yml
+
+---
+id: oh-my-opencode-workflow-ralph-loop-maintenance
+trigger: "when doing ralph loop maintenance"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Ralph Loop Maintenance
+
+## Action
+
+Follow the ralph-loop-maintenance workflow:
+1. Update completion detection logic
+2. Modify loop state management
+3. Update event handlers
+4. Adjust storage and types
+5. Add/update tests
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/hooks/ralph-loop/*.ts, src/hooks/ralph-loop/*.test.ts
+
+---
+id: oh-my-opencode-workflow-model-configuration-updates
+trigger: "when doing model configuration updates"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Model Configuration Updates
+
+## Action
+
+Follow the model-configuration-updates workflow:
+1. Update model requirements
+2. Modify provider configurations
+3. Update test snapshots
+4. Adjust fallback logic
+5. Update agent configurations
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/shared/model-*.ts, src/cli/**/*.test.ts, src/agents/*.ts
+
+---
+id: oh-my-opencode-workflow-merge-pull-request-workflow
+trigger: "when doing merge pull request workflow"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Merge Pull Request Workflow
+
+## Action
+
+Follow the merge-pull-request-workflow workflow:
+1. Review PR changes
+2. Merge pull request
+3. Update affected files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~20x per month
+- Files: Various files depending on PR content
+
+---
+id: oh-my-opencode-workflow-platform-binary-management
+trigger: "when doing platform binary management"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Platform Binary Management
+
+## Action
+
+Follow the platform-binary-management workflow:
+1. Update main package.json
+2. Update all platform-specific package.json files
+3. Modify CI workflows
+4. Update platform detection logic
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package.json, packages/*/package.json, .github/workflows/*.yml
+
+---
+id: oh-my-opencode-workflow-config-handler-fixes
+trigger: "when doing config handler fixes"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Config Handler Fixes
+
+## Action
+
+Follow the config-handler-fixes workflow:
+1. Identify config issue
+2. Update config handler logic
+3. Add/update tests
+4. Preserve existing user configurations
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/plugin-handlers/config-handler*.ts, src/cli/config-manager/*.ts
+
+---
+id: oh-my-opencode-kebab-case-files
+trigger: "When creating new files in TypeScript"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Kebab Case Files
+
+## Action
+
+Use kebab-case naming for file names
+
+## Evidence
+
+- Consistent kebab-case in src folder structure
+- Files like hashline-edit-executor.ts, edit-deduplication.ts
+
+---
+id: oh-my-opencode-camelcase-functions
+trigger: "When defining functions in TypeScript"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Camelcase Functions
+
+## Action
+
+Use camelCase naming for function names
+
+## Evidence
+
+- Standard TypeScript convention observed in codebase
+- Consistent pattern in src files
+
+---
+id: oh-my-opencode-pascalcase-classes
+trigger: "When defining classes in TypeScript"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Pascalcase Classes
+
+## Action
+
+Use PascalCase naming for class names
+
+## Evidence
+
+- Standard TypeScript convention observed in codebase
+- Pattern in agent and plugin files
+
+---
+id: oh-my-opencode-relative-imports
+trigger: "When importing modules within the project"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Relative Imports
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Monorepo structure suggests relative imports
+- Common pattern in TypeScript projects
+
+---
+id: oh-my-opencode-named-exports
+trigger: "When exporting from modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Named Exports
+
+## Action
+
+Use named exports instead of default exports
+
+## Evidence
+
+- TypeScript best practices
+- Consistent with module organization
+
+---
+id: oh-my-opencode-colocated-tests
+trigger: "When writing tests for a module"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Colocated Tests
+
+## Action
+
+Place test files in the same directory as the source files with .test.ts extension
+
+## Evidence
+
+- Test location marked as colocated
+- Examples: edit-operations.test.ts, tools.test.ts
+
+---
+id: oh-my-opencode-jest-framework
+trigger: "When setting up tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Jest Framework
+
+## Action
+
+Use Jest testing framework
+
+## Evidence
+
+- Testing framework identified as jest
+- Pattern *.test.ts files
+
+---
+id: oh-my-opencode-unit-integration-tests
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Unit Integration Tests
+
+## Action
+
+Write both unit and integration tests
+
+## Evidence
+
+- Test types include both unit and integration
+- Examples in hashline-edit and ralph-loop
+
+---
+id: oh-my-opencode-try-catch-errors
+trigger: "When handling errors"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Error handling style identified as try-catch
+- Standard TypeScript practice
+
+---
+id: oh-my-opencode-conventional-commits
+trigger: "When making commits"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Conventional Commits
+
+## Action
+
+Use conventional commit format with type(scope): description
+
+## Evidence
+
+- fix(atlas): use start-work session agent
+- feat(benchmarks): add hashline-edit test suites
+- test(ralph-loop): harden completion detector
+
+---
+id: oh-my-opencode-69-char-commits
+trigger: "When writing commit messages"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode 69 Char Commits
+
+## Action
+
+Keep commit messages around 69 characters on average
+
+## Evidence
+
+- Average commit length: 69 characters
+- Examples show descriptive but concise messages
+
+---
+id: oh-my-opencode-fix-with-tests
+trigger: "When fixing bugs in existing features"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Fix With Tests
+
+## Action
+
+Modify both the main source file and its corresponding test file
+
+## Evidence
+
+- fix-with-test-pattern workflow frequency: 15x/month
+- Examples in hashline-edit fixes
+
+---
+id: oh-my-opencode-cla-signature
+trigger: "When a new contributor signs the CLA in a pull request"
+confidence: 1
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Cla Signature
+
+## Action
+
+Update signatures/cla.json with contributor information
+
+## Evidence
+
+- @1noilimrev has signed the CLA
+- @dwnmf has signed the CLA
+- CLA workflow examples
+
+---
+id: oh-my-opencode-ci-fixes
+trigger: "When CI builds fail or need improvements"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Ci Fixes
+
+## Action
+
+Modify GitHub workflow YAML files in .github/workflows/
+
+## Evidence
+
+- fix(ci): pre-download baseline compile targets
+- ci: trigger CI
+- Multiple workflow files
+
+---
+id: oh-my-opencode-ralph-loop-maintenance
+trigger: "When ralph-loop has bugs or needs feature updates"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Ralph Loop Maintenance
+
+## Action
+
+Update completion detection, loop state management, event handlers, and tests together
+
+## Evidence
+
+- fix(ralph-loop): add inFlight guard and improve completion detection
+- Multiple ralph-loop related files
+
+---
+id: oh-my-opencode-model-config-updates
+trigger: "When model providers change or new models are added"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Model Config Updates
+
+## Action
+
+Update model requirements, provider configs, test snapshots, and agent configurations
+
+## Evidence
+
+- Model configuration files in src/shared/model-*
+- Test snapshots pattern
+- Agent configurations
+
+---
+id: oh-my-opencode-platform-binary-management
+trigger: "When releasing new versions or adding platform support"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Platform Binary Management
+
+## Action
+
+Update main package.json and all platform-specific package.json files simultaneously
+
+## Evidence
+
+- Multiple platform packages
+- release: v3.9.0 commits
+- Platform-specific package.json files
+
+---
+id: oh-my-opencode-config-handler-fixes
+trigger: "When configuration management has issues"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Config Handler Fixes
+
+## Action
+
+Update config handler logic while preserving existing user configurations
+
+## Evidence
+
+- Config handler files pattern
+- Plugin-handlers directory structure
+- CLI config-manager
+
+---
+id: oh-my-opencode-monorepo-structure
+trigger: "When organizing code modules"
+confidence: 0.9
+domain: architecture
+source: repo-analysis
+source_repo: bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Monorepo Structure
+
+## Action
+
+Use type-based organization with folders: agents, cli, config, features, hooks, mcp, plugin-handlers, plugin, shared, tools
+
+## Evidence
+
+- Folder structure shows type-based organization
+- Clear separation of concerns in directory layout
+
