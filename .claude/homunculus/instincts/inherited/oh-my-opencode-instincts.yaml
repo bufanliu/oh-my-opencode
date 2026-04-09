@@ -1,0 +1,400 @@
+# Instincts generated from https://github.com/bufanliu/oh-my-opencode
+# Generated: 2026-03-20T15:44:28.519Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: oh-my-opencode-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, feat, chore, docs
+
+## Evidence
+
+- 200 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat(hooks/todo-continuation-enforcer): enhance continuation message with skeptical verification guidance, fix(cli/run): set OPENCODE_CLIENT to 'run' to exclude question tool from registry
+
+---
+id: oh-my-opencode-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Commit Length
+
+## Action
+
+Write moderate-length commit messages (~69 characters)
+
+## Evidence
+
+- Average commit message length: 69 chars
+- Based on 200 commits
+
+---
+id: oh-my-opencode-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: oh-my-opencode-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: oh-my-opencode-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: oh-my-opencode-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: agents, cli, config, features, hooks
+
+---
+id: oh-my-opencode-test-colocate
+trigger: "when writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Colocate
+
+## Action
+
+Place test file next to the source file (e.g., Button.test.tsx next to Button.tsx)
+
+## Evidence
+
+- Colocated test pattern detected
+- Tests live alongside source files
+
+---
+id: oh-my-opencode-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Framework
+
+## Action
+
+Use jest as the test framework
+
+## Evidence
+
+- Test framework detected: jest
+- File pattern: *.test.ts
+
+---
+id: oh-my-opencode-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: oh-my-opencode-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: no
+
+---
+id: oh-my-opencode-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: **/schema.*, **/types.ts, migrations/*
+
+---
+id: oh-my-opencode-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: src/config/schema/*, src/features/background-agent/*, src/features/builtin-commands/templates/*
+
+---
+id: oh-my-opencode-workflow-add-or-enhance-hook
+trigger: "when doing add or enhance hook"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Add Or Enhance Hook
+
+## Action
+
+Follow the add-or-enhance-hook workflow:
+1. Create or modify hook implementation files under src/hooks/{hook-name}/
+2. Update or add corresponding test files under src/hooks/{hook-name}/
+3. Update src/hooks/index.ts to register the hook (for new hooks)
+4. Optionally update src/config/schema/hooks.ts or related schema/config files
+5. Optionally update plugin hooks or interface files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/hooks/{hook-name}/index.ts, src/hooks/{hook-name}/*.ts, src/hooks/{hook-name}/*.test.ts
+
+---
+id: oh-my-opencode-workflow-feature-or-bugfix-with-tests
+trigger: "when doing feature or bugfix with tests"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Feature Or Bugfix With Tests
+
+## Action
+
+Follow the feature-or-bugfix-with-tests workflow:
+1. Modify implementation files (often in src/hooks/, src/features/, src/shared/, etc.)
+2. Update or add test files with the same base name and .test.ts extension
+3. Commit both implementation and test changes together
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: src/hooks/**/*.ts, src/hooks/**/*.test.ts, src/features/**/*.ts
+
+---
+id: oh-my-opencode-workflow-documentation-sync-or-update
+trigger: "when doing documentation sync or update"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Documentation Sync Or Update
+
+## Action
+
+Follow the documentation-sync-or-update workflow:
+1. Edit documentation files (README.md, AGENTS.md, docs/reference/*.md, etc.)
+2. Optionally update related config or schema files if documentation references them
+3. Commit documentation changes, sometimes with code changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: README.md, AGENTS.md, src/AGENTS.md
+
+---
+id: oh-my-opencode-workflow-cli-or-workflow-pipeline-update
+trigger: "when doing cli or workflow pipeline update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Cli Or Workflow Pipeline Update
+
+## Action
+
+Follow the cli-or-workflow-pipeline-update workflow:
+1. Edit workflow YAML files under .github/workflows/
+2. Edit CLI scripts or related files under src/cli/ or script/
+3. Commit changes, sometimes referencing a publishing or build bug
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/*.yml, src/cli/**/*.ts, script/*.ts
+
+---
+id: oh-my-opencode-workflow-background-agent-circuit-breaker-enhancement
+trigger: "when doing background agent circuit breaker enhancement"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Background Agent Circuit Breaker Enhancement
+
+## Action
+
+Follow the background-agent-circuit-breaker-enhancement workflow:
+1. Edit src/features/background-agent/*.ts implementation files
+2. Edit or add corresponding test files (*.test.ts)
+3. Edit schema/config files for background tasks
+4. Optionally update assets/oh-my-opencode.schema.json
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/features/background-agent/*.ts, src/features/background-agent/*.test.ts, src/config/schema/background-task.ts
+
+---
+id: oh-my-opencode-workflow-cla-signature-update
+trigger: "when doing cla signature update"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/bufanliu/oh-my-opencode
+---
+
+# Oh My Opencode Workflow Cla Signature Update
+
+## Action
+
+Follow the cla-signature-update workflow:
+1. Add or update signatures/cla.json with the new contributor's signature
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: signatures/cla.json
+
